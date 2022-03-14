@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus voluptate
+      ipsum, molestias autem dignissimos nesciunt beatae voluptatum sit animi
+      quia? Maxime necessitatibus sint voluptatum molestiae hic sit explicabo!
+      Incidunt, maiores.
+    </p>
+    <form action="./demo.html" method="get">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="name" />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="password" />
+      </div>
+
+      <div>
+        <input type="checkbox" id="science" name="subject" class="science" />
+        <label for="science">Science</label>
+
+        <input type="checkbox" id="commerce" name="subject" class="commerce" />
+        <label for="commerce">Commerce</label>
+      </div>
+      <input type="submit" value="Submit" class="btn" />
+    </form>
+
+    <script>
+      const name = document.querySelector('.name');
+      const password = document.querySelector('.password');
+      const science = document.querySelector('.science');
+      const commerce = document.querySelector('.commerce');
+      const btn = document.querySelector('.btn');
+
+      btn.addEventListener('click', function (e) {
+        let condition = myResult();
+        if (condition == false) {
+          e.preventDefault();
+        }
+      });
+
+      let myResult = function () {
+        if (name.value.length < 4) {
+          return false;
+        }
+
+        if (password.value.length < 8) {
+          return false;
+        }
+
+        if (science.checked == false && commerce.checked == false) {
+          return false;
+        }
+
+        return true;
+      };
+
+      let myArray = ['csit', 'it', 'bca', 'bim'];
+
+      myArray[1];
+
+      const body = document.querySelector('body');
+
+      for (let i = 0; i < myArray.length; i++) {
+        body.innerHTML = body.innerHTML + myArray[i] + ',';
+      }
+
+      let x = {
+        name: 'john',
+        age: 23,
+        adult: true,
+        get: function () {
+          console.log('hello');
+        },
+      };
+
+      x.name;
+      x.age;
+      x.adult;
+      x.get();
+
+      const para = document.querySelector('p');
+
+      let newText =
+        'lasdjflkasdjflkasdjflsadjflkjsadlfksadjlfjsaldfjalsdfjlasdfjlakdsjf';
+
+      let oldText =
+        ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus voluptate  ipsum, molestias autem dignissimos nesciunt beatae voluptatum sit animiquia? Maxime necessitatibus sint voluptatum molestiae hic sit explicabo!Incidunt, maiores.';
+
+      para.addEventListener('mouseover', function () {
+        para.innerHTML = newText;
+      });
+
+      para.addEventListener('mouseout', function () {
+        para.innerHTML = oldText;
+      });
+    </script>
+  </body>
+</html>
